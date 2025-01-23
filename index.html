@@ -4,22 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-  <h1>Quiz Form</h1>
+  <h1>Simple Quiz</h1>
   <form id="quizForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <label>1. What is the capital of France?</label><br>
+    <input type="radio" name="question1" value="Paris"> Paris<br>
+    <input type="radio" name="question1" value="London"> London<br>
+    <input type="radio" name="question1" value="Rome"> Rome<br><br>
 
-    <label for="question1">Question 1: What is 2 + 2?</label>
-    <input type="text" id="question1" name="question1" required><br><br>
+    <label>2. What is 2 + 2?</label><br>
+    <input type="radio" name="question2" value="3"> 3<br>
+    <input type="radio" name="question2" value="4"> 4<br>
+    <input type="radio" name="question2" value="5"> 5<br><br>
 
-    <label for="question2">Question 2: What is the capital of France?</label>
-    <input type="text" id="question2" name="question2" required><br><br>
-
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
   </form>
 
-  <script src="quiz.js"></script>
+  <script>
+    document.getElementById('quizForm').onsubmit = function (event) {
+      event.preventDefault(); // Prevent page reload
+
+      // Add your scoring logic here (optional)
+      const url = "https://dev-web.jobkikhoj.com/"; // Redirect URL
+      window.location.href = url; // Redirect after quiz submission
+    };
+  </script>
 </body>
 </html>
