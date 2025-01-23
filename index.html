@@ -1,57 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      padding: 0;
-    }
-    h1 {
-      color: #333;
-    }
-    form {
-      margin-top: 20px;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <script type="text/javascript">
+        // Redirect to a specific URL after 3 seconds
+        setTimeout(function(){
+            window.location.href = "https://dev-web.jobkikhoj.com/"; // Update this URL to your target
+        }, 3000); // Redirect after 3 seconds
+    </script>
 </head>
 <body>
-  <h1>Simple Quiz</h1>
-  <form id="quizForm">
-    <label>1. What is the capital of France?</label><br>
-    <input type="radio" name="question1" value="Paris"> Paris<br>
-    <input type="radio" name="question1" value="London"> London<br>
-    <input type="radio" name="question1" value="Rome"> Rome<br><br>
-
-    <label>2. What is 2 + 2?</label><br>
-    <input type="radio" name="question2" value="3"> 3<br>
-    <input type="radio" name="question2" value="4"> 4<br>
-    <input type="radio" name="question2" value="5"> 5<br><br>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <script>
-    document.getElementById('quizForm').onsubmit = function (event) {
-      event.preventDefault(); // Prevent page reload
-
-      // Add your scoring logic here (optional)
-      const url = "https://dev-web.jobkikhoj.com/"; // Redirect URL
-      window.location.href = url; // Redirect after quiz submission
-    };
-  </script>
+    <h1>Thank You for Completing the Quiz!</h1>
+    <p>You will be redirected shortly...</p>
 </body>
 </html>
