@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Form</title>
     <script>
-        // Function to monitor the iframe URL for redirection
+        // Function to detect form submission and redirect
         function monitorFormSubmission() {
             const iframe = document.getElementById('google-form');
             const youtubeRedirectURL = "https://dev-web.jobkikhoj.com/"; // Replace with your YouTube URL
-
+            
             // Check the iframe URL periodically
-            setInterval(() => {
+            const interval = setInterval(() => {
                 try {
                     const currentURL = iframe.contentWindow.location.href;
 
                     // Google Forms confirmation URL contains "/formResponse"
                     if (currentURL.includes("/formResponse")) {
-                        // Redirect to YouTube after submission
+                        clearInterval(interval); // Stop checking
+                        // Redirect to YouTube
                         window.location.href = youtubeRedirectURL;
                     }
                 } catch (error) {
-                    // Catch cross-origin errors (expected before submission)
+                    // Ignore cross-origin errors (expected before form submission)
                 }
             }, 1000); // Check every second
         }
@@ -29,7 +30,7 @@
 </head>
 <body onload="monitorFormSubmission()">
     <h1>Quiz Form</h1>
-    <p>Fill out the quiz form below. After submission, you'll be redirected to a YouTube page.</p>
+    <p>Please fill out the form below and click Submit. After submission, you’ll be redirected to a YouTube page.</p>
 
     <!-- Embed the Google Form -->
     <iframe 
