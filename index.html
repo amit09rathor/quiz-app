@@ -3,16 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
-    <script type="text/javascript">
-        // Redirect to a specific URL after 3 seconds
-        setTimeout(function(){
-            window.location.href = "https://dev-web.jobkikhoj.com/"; // Update this URL to your target
-        }, 3000); // Redirect after 3 seconds
+    <title>Quiz Form</title>
+    <script>
+        // Function to handle the redirection after form submission
+        function redirectToYouTube() {
+            // Redirect to the YouTube page after 5 seconds
+            setTimeout(() => {
+                window.location.href = "https://dev-web.jobkikhoj.com/";
+            }, 5000); // 5000 ms = 5 seconds
+        }
     </script>
 </head>
 <body>
-    <h1>Thank You for Completing the Quiz!</h1>
-    <p>You will be redirected shortly...</p>
+    <h1>Quiz Form</h1>
+    <p>Fill out the form below, and you'll be redirected after submission.</p>
+    
+    <!-- Embed the Google Form -->
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfpm4X3yOGFU3OYBt1GhRkCI-dD9HdBQHQKjdVrCRyBI5ev9w/viewform?embedded=true" 
+        width="640" 
+        height="800" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        onload="redirectToYouTube()">
+    </iframe>
+
+    <noscript>
+        <p>Please enable JavaScript to submit the form and be redirected.</p>
+    </noscript>
+
+    <p>
+        If you are not automatically redirected, <a href="https://dev-web.jobkikhoj.com/">click here</a>.
+    </p>
 </body>
 </html>
